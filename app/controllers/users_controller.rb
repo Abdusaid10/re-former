@@ -2,8 +2,8 @@ class UsersController < ApplicationController
     def new 
     end
     def create
-    #   @user = User.new(whitelisted_post_params)
-      @user=User.new(username: params[:username], email: params[:email], password: params[:password])  
+      @user = User.new(whitelisted_post_params)
+    #   @user=User.new(username: params[:username], email: params[:email], password: params[:password])  
       if @user.save
         redirect_to new_user_path
       else
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     def update
         @user=User.find(params[:id])
-        @user.update(username:  params[:username], email: params[:email], password: params[:password])
+        @user.update(whitelisted_post_params)
     end
 
     def show
