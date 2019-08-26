@@ -1,12 +1,12 @@
-<form action="<%= users_path %>" method="post" accept-charset="UTF-8">
+<%= form_for(:user, as: :post, url: users_path )do |user|%>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <label for="username">Username</label>
-    <input name="username" type="text">
+    <input name="user[username]" type="text">
 
     <label for="email">Email address</label>
-    <input name="email" type="text">
+    <input name="user[email]" type="text">
 
     <label for="password">Password</label>
-    <input name="password" type="password"> 
-    <button name="submit">Submit</button>
-</form>    
+    <input name="user[password]" type="password"> 
+    <button name="submit">submit</button>
+<% end %>    
