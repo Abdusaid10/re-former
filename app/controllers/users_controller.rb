@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     def update
         @user=User.find(params[:id])
         @user.update(whitelisted_post_params)
+
     end
 
     def show

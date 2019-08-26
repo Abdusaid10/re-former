@@ -1,4 +1,5 @@
  <%= form_for(@user, as: :user, url: user_path, authenticity_token: form_authenticity_token)do |user|%>
+   <%= render 'shared/error_messages' %>
   <%= user.label(:username, 'Username') %>
   <%= user.text_field(:username)%>
   <%= user.label(:email, 'Email address' ) %>
