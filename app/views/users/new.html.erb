@@ -1,15 +1,13 @@
-
- <%= form_for(@user, as: :user, url: users_path, authenticity_token: form_authenticity_token)do |user|%>
+<%= form_for @user do |user|%>
   <%= render 'shared/error_messages' %>
   <%= user.label(:username, 'Username') %>
   <%= user.text_field(:username)%>
   <%= user.label(:email, 'Email address' ) %>
    <%= user.text_field(:email)%>
   <%= user.label(:password, 'Password' ) %>
-   <%= user.password_field(:password)%>
+   <%= user.password_field(:password, value: @user.password)%>
   <%= user.submit( 'Submit' ) %>
 <% end %>  
-
 <%
 =begin%>
 <%= form_tag('/users', method: :post) do %>
