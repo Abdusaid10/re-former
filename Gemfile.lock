@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.13-x64-mingw32)
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
@@ -62,7 +63,7 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    chromedriver-helper (2.1.1)
+    chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coffee-rails (4.2.2)
@@ -101,6 +102,7 @@ GEM
     nio4r (2.4.0)
     nokogiri (1.10.4-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.1.4-x64-mingw32)
     public_suffix (3.1.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -185,13 +187,15 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
-  chromedriver-helper
+  chromedriver-helper (= 1.2.0)
   coffee-rails (~> 4.2)
   duktape
   jbuilder (~> 2.5)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
