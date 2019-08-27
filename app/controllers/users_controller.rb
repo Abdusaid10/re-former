@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(whitelisted_user_params)
-    #  @user=User.new(username: params[:username], email: params[:email], password: params[:password])  
     if @user.save
       redirect_to @user
     else
