@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(whitelisted_user_params)
     #  @user=User.new(username: params[:username], email: params[:email], password: params[:password])  
     if @user.save
-      redirect_to new_user_path
+      redirect_to @user
     else
       render :new
     end
@@ -20,10 +20,17 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(whitelisted_post_params)
+    @user.update(whitelisted_user_params)
+    if @user.save
+      redirect_to @user
+    else
+      render :edit
+    end
+
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   private

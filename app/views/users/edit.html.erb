@@ -5,6 +5,6 @@
   <%= user.label(:email, 'Email address' ) %>
    <%= user.text_field(:email)%>
   <%= user.label(:password, 'Password' ) %>
-   <%= user.password_field(:password)%>
+   <%= user.password_field(:password, value: @user.password)%>
   <%= user.submit( 'Submit' ) %>
 <% end %>  
